@@ -119,6 +119,17 @@
 <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="container text-center text-md-left" data-aos="fade-up">
         <h1>Đăng Nhập </h1>
+        <h2>   @if (Session::has('wrong-password'))
+                <div class="login-fail">
+                    <p class="text-white">{{ Session::get('wrong-password') }}</p>
+                </div>
+            @endif
+            @if (Session::has('not-login'))
+                <div class="login-fail">
+                    <p class="text-white">{{ Session::get('not-login') }}</p>
+                </div>
+            @endif
+        </h2>
         <h2>
             <form method="post" action="{{route('admin.check')}}" enctype="multipart/form-data">
                 @csrf
@@ -133,10 +144,9 @@
 {{--                    <label class="form-check-label" for="exampleCheck1">Check me out</label>--}}
 {{--                </div>--}}
                 <button class="btn-get-started scrollto" type="submit">Bước đầu tiên để thành công  </button>
-                @if (session('wrong password'))
-                    <div class="alert alert-info">{{session()->get('wrong password')}}</div>
-                @endif
+
             </form>
+
         </h2>
 
     </div>

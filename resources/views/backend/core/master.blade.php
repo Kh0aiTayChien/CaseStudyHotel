@@ -30,8 +30,12 @@
     <!-- /. NAV SIDE  -->
 
     @yield('content')
-    <!-- /. PAGE WRAPPER  -->
+    @include('backend.core.layouts.footer ')
 </div>
+    <!-- /. PAGE WRAPPER  -->
+
+</div>
+
 <!-- /. WRAPPER  -->
 <!-- JS Scripts-->
 <!-- jQuery Js -->

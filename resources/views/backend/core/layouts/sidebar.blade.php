@@ -4,13 +4,13 @@
         <ul class="nav" id="main-menu">
 
             <li>
-                <a class="active-menu waves-effect waves-dark" href="{{route('admin.index')}}"><i class="fa fa-dashboard"></i> Tổng quan </a>
+                <a class="active-menu waves-effect waves-dark" href=""><i class="fa fa-dashboard"></i> Tổng quan </a>
             </li>
             <li>
                 <a href="{{Route('room.index')}}" class="waves-effect waves-dark"><i class="fa fa-desktop"></i> Quản lý phòng </a>
             </li>
             <li>
-                <a href="chart.html" class="waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> Charts</a>
+                <a href="chart.html" class="waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> Thêm mới phòng </a>
             </li>
             <li>
                 <a href="tab-panel.html" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> Tabs & Panels</a>

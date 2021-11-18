@@ -14,7 +14,7 @@ class RoomSeeder extends Seeder
      */
     public function run()
     {
-        for($i=0; $i<15; $i++) {
+        for($i=0; $i<50; $i++) {
             $room = new room();
             $room->name = "Phong".mt_rand(1,100);
             $room->status = mt_rand(0,1);

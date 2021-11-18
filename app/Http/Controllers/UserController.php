@@ -25,27 +25,47 @@ class UserController extends Controller
 //        ], 200);
 //
 //    }
-    public function login(){
-    return view('backend.login');
+    public function login()
+    {
+        return view('backend.login');
     }
 
-    public function index(){
-        return view('backend.admin');
-    }
-    public function checklogin(Request $request){;
+    public function index(Request $request)
+    {
 
-        $login = $request->only('email',"password");
+        if ($request->session()->has('login') && $request->session()->get('login')) {
 
-        if(!Auth::attempt($login))
-        {
-            $request->session()->flash('wrong password' , ' Sai mật khẩu hoặc password ');
-        }else
-        {
-//            $request->session()->push(['name'=>$request->name]);
-         return redirect()->route('admin.index');
-
+            return view('backend.admin');
         }
 
 
+        $message = 'Bạn chưa đăng nhập.';
+        $request->session()->flash('not-login', $message);
+
+        return redirect()->route('admin.index');
     }
+
+    public function checklogin(Request $request)
+    {
+        ;
+
+        $login = $request->only('email', "password");
+
+        if (!Auth::attempt($login)) {
+            $message = "Sai thông tin email hoặc mật khẩu !";
+            $request->session()->flash('wrong-password', $message);
+            return redirect()->route('login');
+        } else {
+
+            $request->session()->push('login', true);
+            return view('backend.admin');
+
+        }
+
+    }
+    public function logout(Request $request){
+        $request->session()->flush();
+        return redirect()->route('login');
+    }
+
 }

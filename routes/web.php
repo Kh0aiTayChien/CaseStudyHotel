@@ -16,15 +16,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('backend.index');
 });
-Route::get('/login',[\App\Http\Controllers\UserController::class,'login'])->name('login');
+Route::get('/login', [\App\Http\Controllers\UserController::class, 'login'])->name('login');
 
-Route::group(["prefix" =>"admin"], function () {
-Route::get('/',[\App\Http\Controllers\UserController::class,'index'])->name('admin.index');
-Route::post('/',[\App\Http\Controllers\UserController::class,'checklogin'])->name('admin.check');
+Route::group(["prefix" => "admin"], function () {
+    Route::get('/', [\App\Http\Controllers\UserController::class, 'index'])->name('admin.index');
+    Route::post('/', [\App\Http\Controllers\UserController::class, 'checklogin'])->name('admin.check');
+    Route::get('/', [\App\Http\Controllers\UserController::class, 'logout'])->name('admin.logout');
 
-Route::group(["prefix" => "room"],function (){
-Route::get('/',[\App\Http\Controllers\RoomController::class,'index'])->name('room.index');
-});
+
+    Route::group(["prefix" => "room"], function () {
+        Route::get('/', [\App\Http\Controllers\RoomController::class, 'index'])->name('room.index');
+    });
 });
 
 
