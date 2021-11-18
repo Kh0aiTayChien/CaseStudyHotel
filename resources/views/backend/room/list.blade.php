@@ -1,14 +1,15 @@
+
 @extends('backend.core.master')
 @section('content')
     <div id="page-wrapper">
         <div class="header">
             <h1 class="page-header">
-                Tổng quan
+                Quản lý phòng
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#">Trang chủ </a></li>
-                <li><a href="#">Tổng quan</a></li>
-                <li class="active">Dữ liệu </li>
+                <li><a href="#">Admin  </a></li>
+                <li class="active">Quản lý phòng </li>
             </ol>
 
         </div>

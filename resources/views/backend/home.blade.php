@@ -3,12 +3,12 @@
     <div id="page-wrapper">
         <div class="header">
             <h1 class="page-header">
-                Tổng quan
+                Quản lý phòng
             </h1>
             <ol class="breadcrumb">
-                <li><a href="#">Trang chủ </a></li>
-                <li><a href="#">Tổng quan</a></li>
-                <li class="active">Dữ liệu </li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Dashboard</a></li>
+                <li class="active">Data</li>
             </ol>
 
         </div>

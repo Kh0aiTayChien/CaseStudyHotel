@@ -24,6 +24,12 @@
 
     <!-- Template Main CSS File -->
     <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
+    <style>
+        .a {
+            text-align: center;
+            margin: auto;
+        }
+    </style>
 
     <!-- =======================================================
     * Template Name: Lumia - v4.6.0
@@ -117,10 +123,10 @@
             <form method="post" action="{{route('admin.check')}}" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="email">
+                    <input type="email" class="form-control a" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="email" style="width: 400px">
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+                    <input type="password" class="form-control a" id="exampleInputPassword1" placeholder="Password" name="password" style= "width: 400px">
                 </div>
 {{--                <div class="form-check">--}}
 {{--                    <input type="checkbox" class="form-check-input" id="exampleCheck1">--}}

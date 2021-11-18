@@ -21,6 +21,10 @@ Route::get('/login',[\App\Http\Controllers\UserController::class,'login'])->name
 Route::group(["prefix" =>"admin"], function () {
 Route::get('/',[\App\Http\Controllers\UserController::class,'index'])->name('admin.index');
 Route::post('/',[\App\Http\Controllers\UserController::class,'checklogin'])->name('admin.check');
+
+Route::group(["prefix" => "room"],function (){
+Route::get('/',[\App\Http\Controllers\RoomController::class,'index'])->name('room.index');
+});
 });
 
 
