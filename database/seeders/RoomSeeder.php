@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\room;
+use App\Models\Room;
 use Illuminate\Database\Seeder;
 
 class RoomSeeder extends Seeder
@@ -15,9 +15,9 @@ class RoomSeeder extends Seeder
     public function run()
     {
         for($i=0; $i<50; $i++) {
-            $room = new room();
+            $room = new Room();
             $room->name = "Phong".mt_rand(1,100);
-            $room->status = mt_rand(0,1);
+            $room->status = mt_rand(1,2);
             $room->save();
         }
     }

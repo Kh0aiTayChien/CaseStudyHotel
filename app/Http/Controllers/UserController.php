@@ -47,7 +47,6 @@ class UserController extends Controller
 
     public function checklogin(Request $request)
     {
-        ;
 
         $login = $request->only('email', "password");
 
@@ -56,10 +55,9 @@ class UserController extends Controller
             $request->session()->flash('wrong-password', $message);
             return redirect()->route('login');
         } else {
-
+            $name = $request->email ;
             $request->session()->push('login', true);
             return view('backend.admin');
-
         }
 
     }

@@ -19,3 +19,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('login',[\App\Http\Controllers\UserController::class,'login']);
+Route::post('status',[\App\Http\Controllers\RoomController::class,'updatestatus']);

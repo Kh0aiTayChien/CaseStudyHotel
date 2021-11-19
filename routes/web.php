@@ -21,11 +21,13 @@ Route::get('/login', [\App\Http\Controllers\UserController::class, 'login'])->na
 Route::group(["prefix" => "admin"], function () {
     Route::get('/', [\App\Http\Controllers\UserController::class, 'index'])->name('admin.index');
     Route::post('/', [\App\Http\Controllers\UserController::class, 'checklogin'])->name('admin.check');
-    Route::get('/', [\App\Http\Controllers\UserController::class, 'logout'])->name('admin.logout');
+    Route::get('/logout', [\App\Http\Controllers\UserController::class, 'logout'])->name('admin.logout');
+    Route::get('/reload', [\App\Http\Controllers\UserController::class, 'reload'])->name('admin.reload');
 
 
     Route::group(["prefix" => "room"], function () {
         Route::get('/', [\App\Http\Controllers\RoomController::class, 'index'])->name('room.index');
+        Route::get('/add', [\App\Http\Controllers\RoomController::class, 'create'])->name('room.create');
     });
 });
 
