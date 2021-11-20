@@ -18,6 +18,7 @@ class CreateRoomTable extends Migration
             $table->string('name',20);
             $table->unsignedInteger('id_room');
             $table->string('image');
+            $table->string('price');
             $table->tinyInteger('Status');
             $table->text('Describle');
             $table->timestamps();

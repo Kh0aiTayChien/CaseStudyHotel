@@ -2,11 +2,15 @@
 <nav class="navbar navbar-default top-navbar" role="navigation">
     <div class="navbar-header">
         <button type="button" class="navbar-toggle waves-effect waves-dark" data-toggle="collapse" data-target=".sidebar-collapse">
+
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
         </button>
+        <iframe style="margin-left: 50rem;margin-top: 2rem" src="https://free.timeanddate.com/clock/i82sycvd/n95/tlvn/fn5/fc099/tcccc/bo2/tt0" frameborder="0" width="292" height="21"></iframe>
+
         <a class="navbar-brand waves-effect waves-dark" href="index.html"><i class="large material-icons">insert_chart</i> <strong>TRACK</strong></a>
 
         <div id="sideNav" href=""><i class="material-icons dp48">toc</i></div>

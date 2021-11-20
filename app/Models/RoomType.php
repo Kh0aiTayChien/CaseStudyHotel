@@ -5,11 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Room extends Model
+class RoomType extends Model
 {
     use HasFactory;
-    public function RoomType()
+    protected $table= "roomtype";
+    public function rooms()
     {
-        return $this->belongsTo(RoomType::class);
+        return $this->hasMany(Room::class, 'id_room');
     }
 }

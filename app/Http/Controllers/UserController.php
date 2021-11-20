@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -66,4 +67,15 @@ class UserController extends Controller
         return redirect()->route('login');
     }
 
+    public function showprofile(){
+    return view('backend.user.user');
+    }
+
+    public function changeinfo(Request $request,$id){
+        $user = User::findOrFail($id);
+        $user ->name= $request->name;
+        $user ->phone = $request->phone;
+        $user ->save();
+        return redirect()->name('user.profile');
+    }
 }
