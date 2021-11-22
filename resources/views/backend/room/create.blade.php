@@ -22,10 +22,12 @@
             <div class="form-group h1">
                 <label for="exampleFormControlInput1" style="font-size: 20px">Tên Phòng </label>
                 <input type="text" class="form-control" id="exampleFormControlInput1" name="name" >
+                <p class="alert-success">{{ $errors->first('name') }}</p>
             </div>
                     <div class="form-group h1">
                         <label for="exampleFormControlInput1" style="font-size: 20px">Giá Phòng  </label>
                         <input type="text" class="form-control" id="exampleFormControlInput1" name="price">
+                        <p class="alert-success">{{ $errors->first('price') }}</p>
                     </div>
             <div class="form-group">
                 <label for="exampleFormControlSelect1" style="font-size: 20px" >Loại Phòng </label>
@@ -38,23 +40,25 @@
             <div class="form-group">
                 <label for="exampleFormControlSelect1" style="font-size: 20px">Trạng thái phòng </label>
                 <select class="form-control" id="exampleFormControlSelect1" name="status">
-                    <option>Phòng Trống </option>
-                    <option>Đang Thuê </option>
-                    <option>Đang Sửa Chữa </option>
+                    <option>Phòng Trống</option>
+                    <option>Đang Thuê</option>
+                    <option>Đang Sửa Chữa</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="exampleFormControlTextarea1" style="font-size: 20px">Miêu Tả </label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="describle"></textarea>
+                <p class="alert-success">{{ $errors->first('describle') }}</p>
             </div>
 
                     <div class="form-group">
                         <label for="exampleFormControlFile1" style="font-size: 20px">Ảnh phòng </label>
                         <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1">
+                        <p class="alert-success">{{ $errors->first('image') }}</p>
                     </div>
 
                     <div class="form-group">
-                    <button class="button btn-primary" type="submit" value="Submit">Xac Nhan </button>
+                    <button class="button btn-primary btn-block" type="submit" value="Submit">Xac Nhan </button>
                 </div>
 
 

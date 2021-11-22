@@ -12,4 +12,11 @@ class Room extends Model
     {
         return $this->belongsTo(RoomType::class);
     }
+
+     protected $table= "rooms";
+    protected $fillable=['name','id_room','image','Status','Describle','price',];
+    public function Order()
+    {
+        return $this->hasMany(Order::class, 'id_room');
+    }
 }

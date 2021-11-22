@@ -79,12 +79,12 @@
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li><a class="nav-link scrollto active" href="#hero">Trang chủ </a></li>
+          <li><a class="nav-link scrollto" href="#about"> Về chúng tôi </a></li>
+          <li><a class="nav-link scrollto" href="#services"> Dịch Vụ </a></li>
           <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
-          <li><a class="nav-link scrollto" href="#testimonials">Testimonials</a></li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+          <li><a class="nav-link scrollto" href="#testimonials">Khách hàng</a></li>
+          <li class="dropdown"><a href="#"><span>Quản lí </span> <i class="bi bi-chevron-down"></i></a>
             <ul>
 {{--              <li><a  data-toggle="modal" class="btn-outline-lidroght" data-target="#exampleModal">--}}
 {{--                      Log in--}}
@@ -116,7 +116,7 @@
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="container text-center text-md-left" data-aos="fade-up">
       <h1>Welcome to <span>Lumia</span></h1>
-      <h2>We are team of talented designers making websites with Bootstrap</h2>
+      <h2>Phần mềm quản lý khách sạn số 1 thế giới </h2>
       <a href="#about" class="btn-get-started scrollto">Get Started</a>
     </div>
   </section><!-- End Hero -->
@@ -129,31 +129,31 @@
 
         <div class="section-title">
           <h2>What We Do</h2>
-          <p>Magnam dolores commodi suscipit consequatur ex aliquid</p>
+          <p>Phần mềm quản lý khách sạn chuyên nghiệp hàng đầu </p>
         </div>
 
         <div class="row">
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="icon-box">
               <div class="icon"><i class="bx bxl-dribbble"></i></div>
-              <h4><a href="">Lorem Ipsum</a></h4>
-              <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+              <h4><a href="">Năng động và sáng tạo </a></h4>
+              <p>Đội ngũ nhân sự giàu nhiệt huyết và đam mê </p>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-file"></i></div>
-              <h4><a href="">Sed ut perspiciatis</a></h4>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+              <h4><a href="">Tổ chức và chuyên nghiệp</a></h4>
+              <p>Là tôn chỉ trong suốt mọi hành động của chúng tôi </p>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-tachometer"></i></div>
-              <h4><a href="">Magni Dolores</a></h4>
-              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+              <h4><a href="">Tốc độ thực thi cao</a></h4>
+              <p>Tương thích trên mọi ứng dụng </p>
             </div>
           </div>
 
@@ -171,23 +171,23 @@
             <img src="assets/img/about.jpg" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0">
-            <h3>About Us</h3>
+            <h3>Về chúng tôi </h3>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Một ứng dụng quản lý khách sạn ra đời bởi Codegym LTD
             </p>
             <ul>
-              <li><i class="bx bx-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-              <li><i class="bx bx-check-double"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+              <li><i class="bx bx-check-double"></i> Có hàng tỉ khách hàng đang kết nối với hệ thống của chúng tôi </li>
+              <li><i class="bx bx-check-double"></i> Ứng dụng các công nghệ quản lý tiên tiến nhất </li>
             </ul>
             <div class="row icon-boxes">
               <div class="col-md-6">
                 <i class="bx bx-receipt"></i>
-                <h4>Corporis voluptates sit</h4>
+                <h4>Cập nhật thường xuyên </h4>
                 <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
               </div>
               <div class="col-md-6 mt-4 mt-md-0">
                 <i class="bx bx-cube-alt"></i>
-                <h4>Ullamco laboris nisi</h4>
+                <h4>Hỗ trợ khách hàng tối đa </h4>
                 <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
               </div>
             </div>

@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpdateUserRequest;
 use App\Models\User;
 use Illuminate\Http\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
@@ -26,6 +28,11 @@ class UserController extends Controller
 //        ], 200);
 //
 //    }
+//    public function __construct()
+//    {
+//        $this->middleware('auth');
+//    }
+
     public function login()
     {
         return view('backend.login');
@@ -56,26 +63,39 @@ class UserController extends Controller
             $request->session()->flash('wrong-password', $message);
             return redirect()->route('login');
         } else {
-            $name = $request->email ;
+            $name = $request->email;
             $request->session()->push('login', true);
             return view('backend.admin');
         }
 
     }
-    public function logout(Request $request){
+
+    public function logout(Request $request)
+    {
         $request->session()->flush();
+        Auth::logout();
         return redirect()->route('login');
     }
 
-    public function showprofile(){
-    return view('backend.user.user');
+    public function showprofile()
+    {
+        return view('backend.user.user');
     }
 
-    public function changeinfo(Request $request,$id){
-        $user = User::findOrFail($id);
-        $user ->name= $request->name;
-        $user ->phone = $request->phone;
-        $user ->save();
-        return redirect()->name('user.profile');
+    public function changeinfo(UpdateUserRequest $request)
+    {
+        $user = User::findOrFail(Auth::user()->id);
+        if($user){
+            $user->name = $request['name'];
+            $user->phone=$request->phone;
+            if (!$request->hasFile('image')) {
+                $path = $user->image;
+            } else {
+                $path = $request->file('image')->store('images', 'public');
+            }
+            $user->image = $path;
+            $user->save();
+            return redirect()->route('user.showprofile');
+        }
     }
 }

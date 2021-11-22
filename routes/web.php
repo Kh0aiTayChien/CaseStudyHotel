@@ -33,10 +33,11 @@ Route::group(["prefix" => "admin"], function () {
         Route::get('{id}/update',[\App\Http\Controllers\RoomController::class,'edit'])->name('room.edit');
         Route::post('{id}/update',[\App\Http\Controllers\RoomController::class,'update'])->name('room.update');
         Route::get('{id}/delete',[\App\Http\Controllers\RoomController::class,'delete'])->name('room.delete');
+        Route::post("/",[\App\Http\Controllers\RoomController::class,'order'])->name('room.order');
     });
     Route::group(["prefix" => "user"], function () {
         Route::get('/',[\App\Http\Controllers\UserController::class,'showprofile'])->name('user.showprofile');
-        Route::post('/',[\App\Http\Controllers\UserController::class,'update'])->name('user.update');
+        Route::post('/',[\App\Http\Controllers\UserController::class,'changeinfo'])->name('user.update');
 
     });
 

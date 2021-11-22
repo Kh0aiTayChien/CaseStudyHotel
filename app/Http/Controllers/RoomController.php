@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreatRoomRequest;
+use App\Models\Order;
 use App\Models\Room;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -11,7 +14,16 @@ class RoomController extends Controller
     public function index()
     {
         $room = Room::all();
+
         return view('backend.room.list', compact('room'));
+    }
+    public function order(Request $request){
+        $order = new Order();
+        if($request->time == 1 )
+        $order->time_in = Carbon::now()->timestamp;
+        if($request->time == 2 )
+            $order->time_out = Carbon::now()->timestamp;
+        $order->save();
     }
 
     public function create()
@@ -20,7 +32,7 @@ class RoomController extends Controller
 
     }
 
-    public function store(Request $request)
+    public function store(CreatRoomRequest $request)
     {
         $Room = new Room();
         if (!$request->hasFile('image')) {
@@ -37,11 +49,11 @@ class RoomController extends Controller
             if ($request->id_room == "Phòng Vip")
                 $Room->id_room = 3;
 
-            if ($request->status = "Phòng Trống ")
+            if ($request->status == "Phòng Trống")
                 $Room->status = 1;
-            if ($request->status = "Đang Thuê ")
+            if ($request->status == "Đang Thuê")
                 $Room->status = 2;
-            if ($request->status = "Đang Sửa Chữa")
+            if ($request->status == "Đang Sửa Chữa")
                 $Room->status = 3;
             $Room->Describle = $request->describle;
             $Room->save();
@@ -89,20 +101,21 @@ class RoomController extends Controller
         $room->name = $request->name;
         $room->price = $request->price;
         $room->Status= $request->status;
-
-        if ($request->status = "Phòng Trống ")
+        $room->id_room= $request->id_room;
+        if ($request->status == "Phòng Trống")
             $room->status = 1;
-        if ($request->status = "Đang Thuê ")
+        if ($request->status == "Đang Thuê")
             $room->status = 2;
-        if ($request->status = "Đang Sửa Chữa")
+        if ($request->status == "Đang Sửa Chữa")
             $room->status = 3;
 
-        if ($request->id_room = "Phòng Đơn")
-            $room->id_room = 1;
-        if ($request->id_room = "Phòng Đôi")
-            $room->id_room = 2;
-        if ($request->id_room = "Phòng Vip")
-            $room->id_room = 3;
+        if ($request->id_room  == "Phòng Đơn")
+        $room->id_room = 1;
+        if ($request->id_room == "Phòng Đôi")
+         $room->id_room = 2;
+        if ($request->id_room == "Phòng Vip")
+          $room->id_room = 3;
+
         $room->Describle= $request->describle;
         $room->save();
         return redirect()->route('room.showroom');
@@ -112,5 +125,20 @@ class RoomController extends Controller
         $Room = Room::findOrFail($id);
         $Room->delete();
         return redirect()->route('room.showroom');
+    }
+    public function search($input)
+    {
+        if (!empty($input)) {
+            $value = $input;
+            $rooms = Room::where('name', 'LIKE', '%' . $value . '%')->get();
+        } else {
+            $rooms  = Room::all();
+        }
+        return response()->json($rooms);
+    }
+    public function filterTypeRoom($id)
+    {
+        $rooms  = Room::where('id_room', 'LIKE', '%' . $id . '%')->get();
+        return response()->json($rooms);
     }
 }

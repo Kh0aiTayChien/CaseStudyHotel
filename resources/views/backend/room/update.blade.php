@@ -32,17 +32,17 @@
                     <div class="form-group">
                         <label for="exampleFormControlSelect1" style="font-size: 20px" >Loại Phòng </label>
                         <select class="form-control" id="exampleFormControlSelect1" name="id_room" >
-                            <option value="11">Phòng Đơn</option>
-                            <option value="12">Phòng Đôi</option>
-                            <option value="13">Phòng Vip</option>
+                            <option value="1">Phòng Đơn</option>
+                            <option value="2">Phòng Đôi</option>
+                            <option value="3">Phòng Vip</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1" style="font-size: 20px">Trạng thái phòng </label>
                         <select class="form-control" id="exampleFormControlSelect1" name="status" >
-                            <option value="1">Phòng Trống </option>
-                            <option value="2">Đang Thuê </option>
-                            <option value="3">Đang Sửa Chữa </option>
+                            <option value="1">Phòng Trống</option>
+                            <option value="2">Đang Thuê</option>
+                            <option value="3">Đang Sửa Chữa</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -70,7 +70,7 @@
         <script >
             $(document).ready(function() {
                 $('select option[value="{{$room->Status}}"]').attr("selected", true);
-                $('select option[value="1{{$room->id_room}}"]').attr("selected", true);
+                $('select option[value="{{$room->id_room}}"]').attr("selected", true);
                 $("#exampleFormControlTextarea1").text('{{$room->Describle}}');
             });
         </script>

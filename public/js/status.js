@@ -1,39 +1,38 @@
-// $( document ).ready(function() {
-//     console.log( "ready!" );
-//     function status(id,that){
-//         $.ajax({
-//                 url: 'http://127.0.0.1:8000/api/status',
-//                 type: "POST",
-//                 data: {id},
-//                 datatype: 'JSON',
-//                 success: function(res){
-//                     console.log(res.status);
-//                     if(res.status==201){
-//                         that.css({backgroundColor: 'red' });
-//                     }
-//                 }
-//             }
-//         )
-//     }
-// });
-//
 
 
+
+function status(id, that) {
     $.ajax({
             url: 'http://127.0.0.1:8000/api/status',
             type: "POST",
             data: {id},
             datatype: 'JSON',
-            success: function(res){
+            success: function (res) {
                 console.log(res);
-                if(res.status==2){
+             if (res.status == 2) {
+                   if ( confirm('Bạn có muốn cho thuê phòng này ?')== true)
                     that.style.backgroundColor = "red";
-                    return confirm('Bạn có muốn cho thuê phòng này ?')
-                }else if(res.status==1) {
+
+
+                } else if (res.status == 1) {
+                   if( confirm('Bạn có muốn trả phòng này ?') == true )
                     that.style.backgroundColor = "green";
-                    return confirm('Bạn có muốn trả phòng này ?')
+
                 }
             }
         }
     )
 }
+
+
+    $(".card1").css({'background': 'green'})
+    $(".card2").css({'background': 'red'})
+    $(".card3").css({'background': 'purple'})
+
+
+
+    $(".type1").text("Phòng Đơn");
+    $(".type2").text('Phòng Đôi');
+    $(".type3").text('Phòng Vip');
+
+

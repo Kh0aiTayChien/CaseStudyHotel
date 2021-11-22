@@ -24,7 +24,7 @@
             </li>
 
             <li>
-                <a href="empty.html" class="waves-effect waves-dark"><i class="fa fa-fw fa-file"></i> Đăng Xuất </a>
+                <a href="{{Route('admin.logout')}}" class="waves-effect waves-dark"><i class="fa fa-fw fa-file"></i> Đăng Xuất </a>
             </li>
         </ul>
 

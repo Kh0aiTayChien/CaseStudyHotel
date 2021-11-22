@@ -1,4 +1,4 @@
-<footer><p>All right reserved. Template by: <a href="https://webthemez.com/admin-template/">WebThemez.com</a></p>
+<footer><p>All right reserved. Made By Chien C0821H1 and Partner. </p>
 
 
 </footer>
